@@ -19,8 +19,26 @@
       <li class="nav-item has-mega"><a class="nav-link" href="../resources/playbooks.html" aria-haspopup="true">Resources</a><div class="mega" role="menu"><div class="mega-col"><div class="mega-hd">Learning</div><a class="mega-link" href="../resources/playbooks.html"><strong>Playbooks</strong><span>Battle-tested workflows for launch week, handoff logic, and conversion tuning.</span></a><a class="mega-link" href="../resources/case-studies.html"><strong>Case Studies</strong><span>Detailed rollouts from electrical, HVAC, plumbing, roofing, and solar operators.</span></a><a class="mega-cta" href="../resources/playbooks.html">Explore Resources</a></div><div class="mega-col"><div class="mega-hd">Execution</div><a class="mega-link" href="../resources/guides.html"><strong>Guides</strong><span>From first-response scripting to SLA governance, your team gets exact playbooks.</span></a><a class="mega-link" href="../resources/roi-calculator.html"><strong>ROI Calculator</strong><span>Estimate revenue gain, labor savings, and payback period by channel volume.</span></a><a class="mega-cta" href="../resources/guides.html">Explore Resources</a></div><div class="mega-col"><div class="mega-hd">Featured</div><a class="mega-link" href="../customers.html"><strong>Customer Wins</strong><span>Revenue and service outcomes</span></a><a class="mega-link" href="../products.html"><strong>Product Hub</strong><span>Explore platform features</span></a><a class="mega-link" href="../pricing.html"><strong>Plan Guide</strong><span>Find your deployment fit</span></a><a class="mega-cta" href="../customers.html">Explore Resources</a></div></div></li>
       <li class="nav-item"><a class="nav-link" href="../pricing.html">Pricing</a></li>
     </ul>
-    <div class="nav-right"><a href="#" class="btn-cta">Book a Demo</a></div>
+      <div class="nav-right">
+      <a href="#" class="btn-ghost">Log in</a>
+      <a href="#" class="btn-cta">Book a Demo</a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 14 14" fill="none"><path d="M2 4h10M2 7h10M2 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div><a href="#" class="btn-cta">Book a Demo</a></div>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <ul class="mobile-links">
+      <li><a href="../products.html">Products</a></li>
+      <li><a href="../industries.html">Industries</a></li>
+      <li><a href="../customers.html">Customers</a></li>
+      <li><a href="../resources/playbooks.html">Resources</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="#" class="btn-cta" style="display:block;text-align:center;margin-top:20px">Book a Demo</a></li>
+    </ul>
+  </div>
 <main>
   <section class="hero">
     <div class="grid-bg"></div><div class="hero-glow"></div>
@@ -75,5 +93,22 @@
   <div class="foot-copy">© 2026 Malinois, Inc.</div>
 </footer>
 <script src="../assets/js/main.js"></script>
+<script>
+// ── MOBILE TOGGLE
+const toggle = document.querySelector('.nav-toggle');
+const menu = document.querySelector('.mobile-menu');
+if(toggle && menu){
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+}
+</script>
 </body>
 </html>
